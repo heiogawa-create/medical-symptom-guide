@@ -1,0 +1,18 @@
+const replacements: Array<[RegExp, string]> = [
+  [/診断結果/g, '関連する疾患の例'],
+  [/あなたは/g, '入力内容には'],
+  [/可能性が高い/g, '関連することがあります'],
+  [/病院に行かなくてよい/g, '受診を検討してください'],
+  [/医師の診察は不要/g, '医師に相談してください'],
+  [/この薬/g, '薬については医師に相談してください'],
+  [/治ります/g, '改善については医師に確認してください'],
+  [/完治します/g, '経過については医師に確認してください'],
+  [/放置して大丈夫/g, '医療機関で相談してください'],
+  [/AI診断/g, '学習支援'],
+  [/病名判定/g, '疾患知識の確認'],
+  [/自宅で診断/g, '自宅で症状を整理'],
+];
+
+export function sanitizeMedicalText(text: string) {
+  return replacements.reduce((acc, [regexp, replacement]) => acc.replace(regexp, replacement), text);
+}
