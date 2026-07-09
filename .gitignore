@@ -141,3 +141,10 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Cloudflare OpenNext output
+.open-next
+cloudflare-env.d.ts
+
+# Wrangler local state
+.wrangler/

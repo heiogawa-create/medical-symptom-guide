@@ -1,0 +1,12 @@
+export default function TermsPage() {
+  return (
+    <div className="card space-y-3">
+      <h1 className="text-2xl font-bold">利用規約</h1>
+      <p>本アプリは医療行為を提供しません。</p>
+      <p>本アプリは診断、治療、処方を行いません。</p>
+      <p>表示情報は一般的な医学知識と受診目安です。</p>
+      <p>症状が続く場合や不安がある場合は医療機関へ相談してください。</p>
+      <p>緊急時は救急外来や119番を検討してください。アプリの情報だけで自己判断しないでください。</p>
+    </div>
+  );
+}

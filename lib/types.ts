@@ -1,0 +1,3 @@
+export type Urgency = '緊急相談を検討' | '早めの受診を検討' | '経過を見つつ相談を検討';
+export type Disease = { id:string; name_ja:string; category:string; overview:string; pathophysiology:string; common_symptoms:string[]; related_symptoms:string[]; differential_examples:string[]; exam_examples:string[]; department:string[]; red_flags:string[]; urgency:Urgency; disclaimer:string };
+export type SymptomInput = { mainSymptom:string; duration:string; painLevel:string; fever:boolean; bleeding:boolean; diarrhea:boolean; vomiting:boolean; weightLoss:boolean; dizziness:boolean; consciousness:boolean; breathingDifficulty:boolean; chestPain:boolean; paralysisOrSpeech:boolean; other:string };
