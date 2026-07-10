@@ -2,18 +2,17 @@ import Link from 'next/link';
 import { categories } from '@/lib/constants';
 import { diseases, searchDiseases } from '@/lib/diseases';
 
-export default function DiseasesPage({ searchParams }: { searchParams: { q?: string; category?: string } }) {
-  const query = searchParams.q || '';
-  const category = searchParams.category || '';
+export default async function DiseasesPage({ searchParams }: { searchParams: Promise<{ q?: string; category?: string }> }) {
+  const params = await searchParams;
+  const query = params.q || '';
+  const category = params.category || '';
 
-  // 科目（カテゴリ）に属する疾患数を数え、疾患が登録されている科目だけ表示する
   const countByCategory = new Map<string, number>();
   for (const disease of diseases) {
     countByCategory.set(disease.category, (countByCategory.get(disease.category) || 0) + 1);
   }
   const availableCategories = categories.filter((item) => countByCategory.has(item));
 
-  // 検索語がある、または科目が選ばれているときは病名の一覧を表示する
   const showDiseaseList = Boolean(query) || Boolean(category);
   const list = showDiseaseList ? searchDiseases(query, category) : [];
 

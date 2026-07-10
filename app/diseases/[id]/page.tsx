@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { Disclaimer } from '@/components/Disclaimer';
 import { diseases, getDisease } from '@/lib/diseases';
 
@@ -6,8 +7,9 @@ export function generateStaticParams() {
   return diseases.map((disease) => ({ id: disease.id }));
 }
 
-export default function DiseaseDetailPage({ params }: { params: { id: string } }) {
-  const disease = getDisease(params.id);
+export default async function DiseaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const disease = getDisease(id);
   if (!disease) notFound();
 
   const rows = [
@@ -24,7 +26,10 @@ export default function DiseaseDetailPage({ params }: { params: { id: string } }
   return (
     <div className="space-y-5">
       <div className="card">
-        <p className="text-sm text-green-700">{disease.category}</p>
+        <Link className="text-sm text-sky-700 hover:underline" href={`/diseases?category=${encodeURIComponent(disease.category)}`}>
+          ← {disease.category}の一覧に戻る
+        </Link>
+        <p className="mt-2 text-sm text-green-700">{disease.category}</p>
         <h1 className="mt-2 text-2xl font-bold text-sky-800">{disease.name_ja}</h1>
       </div>
       {rows.map(([heading, body]) => (
