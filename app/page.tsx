@@ -1,16 +1,27 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { appConfig } from '@/lib/constants';
 
 export default function Home() {
   return (
     <div className="space-y-6 py-6">
-      <section className="card bg-gradient-to-br from-sky-50 to-green-50">
-        <p className="text-sm font-semibold text-green-700">疾患学習・受診目安サポート</p>
-        <h1 className="mt-3 text-3xl font-bold text-sky-800">{appConfig.name}</h1>
-        <p className="mt-3 text-xl font-semibold">{appConfig.tagline}</p>
-        <p className="mt-4 leading-8">
-          このアプリは診断を行うものではありません。症状をもとに、関連する疾患の例、受診科の目安、医師に伝えるポイントを整理するための学習ツールです。
-        </p>
+      <section className="card relative bg-gradient-to-br from-sky-50 to-green-50">
+        <div className="pr-28 sm:pr-36">
+          <p className="text-sm font-semibold text-green-700">疾患学習・受診目安サポート</p>
+          <h1 className="mt-3 text-3xl font-bold text-sky-800">{appConfig.name}</h1>
+          <p className="mt-3 text-xl font-semibold">{appConfig.tagline}</p>
+          <p className="mt-4 leading-8">
+            このアプリは診断を行うものではありません。症状をもとに、関連する疾患の例、受診科の目安、医師に伝えるポイントを整理するための学習ツールです。
+          </p>
+        </div>
+        <Image
+          src="/mascot.svg"
+          alt="受診目安ナビ マスコットキャラクター"
+          width={120}
+          height={144}
+          className="absolute right-4 top-4 w-24 sm:w-32"
+          priority
+        />
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <Link className="btn bg-sky-600 text-white" href="/symptom-check">
             症状を入力する
