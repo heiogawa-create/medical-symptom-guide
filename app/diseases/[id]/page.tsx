@@ -15,13 +15,12 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
   const rows = [
     ['どんな病気？', disease.overview],
     ['なぜ症状が出るの？', disease.pathophysiology],
-    ['よくみられる症状', disease.common_symptoms.join('、')],
-    ['関連しやすい症状', disease.related_symptoms.join('、')],
-    ['似た症状が出る病気', disease.differential_examples.join('、')],
-    ['病院で確認されること', disease.exam_examples.join('、')],
-    ['相談先の目安', disease.department.join('、')],
-    ['注意が必要なサイン', disease.red_flags.join('、')],
-  ];
+    ['よくみられる症状', disease.details?.symptoms ?? disease.common_symptoms.join('、')],
+    ['関連しやすい症状', disease.details?.related ?? disease.related_symptoms.join('、')],
+    ['似た症状が出る病気', disease.details?.differential ?? disease.differential_examples.join('、')],
+    ['病院で確認されること', disease.details?.exam ?? disease.exam_examples.join('、')],
+    ['相談先の目安', disease.details?.department ?? disease.department.join('、')],
+  ] as const;
 
   return (
     <div className="space-y-5">
@@ -38,6 +37,14 @@ export default async function DiseaseDetailPage({ params }: { params: Promise<{ 
           <p className="mt-2 leading-7">{body}</p>
         </section>
       ))}
+      <section className="card border-amber-200 bg-amber-50">
+        <h2 className="font-bold">注意が必要なサイン</h2>
+        <ul className="mt-2 list-disc space-y-1 pl-5 leading-7">
+          {disease.red_flags.map((flag) => (
+            <li key={flag}>{flag}</li>
+          ))}
+        </ul>
+      </section>
       <p className="card text-sm">{disease.disclaimer}</p>
       <Disclaimer />
     </div>
