@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { Mascot } from '@/components/Mascot';
 
 const booleanFields = [
   ['fever', '発熱'],
@@ -33,7 +34,10 @@ export default function SymptomCheckPage() {
 
   return (
     <form onSubmit={submit} className="space-y-5">
-      <h1 className="text-2xl font-bold">症状を入力する</h1>
+      <div className="flex items-end justify-between gap-3">
+        <h1 className="text-2xl font-bold">症状を入力する</h1>
+        <Mascot pose="memo" className="w-20 shrink-0 sm:w-24" />
+      </div>
       <p className="card text-sm">
         この情報は診断ではありません。ブラウザ上で処理し、MVPではサーバーに保存しません。
       </p>

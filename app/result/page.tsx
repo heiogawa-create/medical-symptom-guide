@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Disclaimer } from '@/components/Disclaimer';
+import { Mascot } from '@/components/Mascot';
 import { assess, makeDoctorMemo } from '@/lib/assessment';
 import { sanitizeMedicalText } from '@/lib/safety';
 import type { SymptomInput } from '@/lib/types';
@@ -31,7 +32,10 @@ export default function ResultPage() {
 
   return (
     <div className="space-y-5">
-      <h1 className="text-2xl font-bold">受診の目安</h1>
+      <div className="flex items-end justify-between gap-3">
+        <h1 className="text-2xl font-bold">受診の目安</h1>
+        <Mascot pose="guide" className="w-20 shrink-0 sm:w-24" />
+      </div>
 
       {assessment.redFlags.length > 0 && (
         <div className="card border-amber-200 bg-amber-50">

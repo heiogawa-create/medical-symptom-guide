@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Mascot } from '@/components/Mascot';
 import { categories } from '@/lib/constants';
 import { searchDiseases } from '@/lib/diseases';
 
@@ -9,7 +10,10 @@ export default function DiseasesPage({ searchParams }: { searchParams: { q?: str
 
   return (
     <div className="space-y-5">
-      <h1 className="text-2xl font-bold">疾患一覧</h1>
+      <div className="flex items-end justify-between gap-3">
+        <h1 className="text-2xl font-bold">疾患一覧</h1>
+        <Mascot pose="guide" className="w-20 shrink-0 sm:w-24" />
+      </div>
       <form className="card grid gap-3">
         <input name="q" defaultValue={query} placeholder="疾患名・症状名で検索" className="rounded-2xl border p-3" />
         <select name="category" defaultValue={category} className="rounded-2xl border p-3">
