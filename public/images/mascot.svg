@@ -1,0 +1,21 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ナビちゃん</title>
+  <desc id="desc">受診目安ナビのやさしい案内キャラクター</desc>
+  <rect width="240" height="240" rx="48" fill="#F0F9FF"/>
+  <circle cx="120" cy="115" r="70" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="6"/>
+  <path d="M72 98C78 62 99 43 120 43C141 43 162 62 168 98" stroke="#86EFAC" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="93" cy="110" r="8" fill="#0F766E"/>
+  <circle cx="147" cy="110" r="8" fill="#0F766E"/>
+  <path d="M99 139C108 148 132 148 141 139" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="75" cy="128" r="10" fill="#DCFCE7"/>
+  <circle cx="165" cy="128" r="10" fill="#DCFCE7"/>
+  <path d="M62 185C75 161 95 149 120 149C145 149 165 161 178 185" fill="#E0F2FE" stroke="#7DD3FC" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="135" y="148" width="48" height="58" rx="10" fill="#FFFFFF" stroke="#38BDF8" stroke-width="5"/>
+  <path d="M148 174L157 183L172 163" stroke="#22C55E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M82 159C92 166 99 176 101 190" stroke="#7DD3FC" stroke-width="8" stroke-linecap="round"/>
+  <path d="M103 58L113 43H127L137 58" fill="#FFFFFF"/>
+  <path d="M120 48V70" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M109 59H131" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M51 71C56 62 64 55 75 51" stroke="#BBF7D0" stroke-width="6" stroke-linecap="round"/>
+  <path d="M189 71C184 62 176 55 165 51" stroke="#BBF7D0" stroke-width="6" stroke-linecap="round"/>
+</svg>
